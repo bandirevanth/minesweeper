@@ -1,2 +1,3 @@
-# minesweeper
-Minesweeper in Python
+# Minesweeper
+
+Minesweeper w/ AI in Python
