@@ -23,9 +23,8 @@ The AI uses logical reasoning to safely uncover cells and identify mines. The ga
 
 ## 🎮 Gameplay
 
-1. Left-click a cell to reveal it.
-2. Right-click a cell to mark it as a mine.
-3. Use the **AI Move** button to let the AI make a move.
+1. Left-click a cell to reveal/mark it.
+3. Use the **AI Move** button to let the AI make a move (or) Continue with your moves
 4. Use the **Reset** button to restart the game.
 5. Win by marking all mines or lose by clicking a mine.
 
