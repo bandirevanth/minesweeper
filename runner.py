@@ -17,6 +17,7 @@ WHITE = (255, 255, 255)
 pygame.init()
 size = width, height = 600, 400
 screen = pygame.display.set_mode(size)
+pygame.display.set_caption("Minesweeper AI by Bandi Revanth")
 
 # Fonts
 OPEN_SANS = "assets/fonts/OpenSans-Regular.ttf"
@@ -152,12 +153,24 @@ while True:
     pygame.draw.rect(screen, WHITE, resetButton)
     screen.blit(buttonText, buttonRect)
 
-    # Display text
-    text = "Lost" if lost else "Won" if game.mines == flags else ""
-    text = mediumFont.render(text, True, WHITE)
-    textRect = text.get_rect()
-    textRect.center = ((5 / 6) * width, (2 / 3) * height)
-    screen.blit(text, textRect)
+    # Display end-of-game message below Reset button
+    if lost:
+        end_text = mediumFont.render("YOU LOST!", True, (255, 50, 50))  # Red
+        endRect = end_text.get_rect()
+        endRect.center = (
+            resetButton.centerx,
+            resetButton.bottom + 40   # 40px below reset button
+        )
+        screen.blit(end_text, endRect)
+
+    elif game.mines == flags:
+        end_text = mediumFont.render("YOU WON!", True, (50, 255, 50))  # Green
+        endRect = end_text.get_rect()
+        endRect.center = (
+            resetButton.centerx,
+            resetButton.bottom + 40   # 40px below reset button
+        )
+        screen.blit(end_text, endRect)
 
     move = None
 
